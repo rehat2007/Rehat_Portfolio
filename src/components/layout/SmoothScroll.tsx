@@ -14,7 +14,7 @@ export function SmoothScroll() {
 
     const lenis = new Lenis({
       autoRaf: false,
-      anchors: true,
+      anchors: false,
       lerp: 0.1,
     });
 
@@ -25,7 +25,25 @@ export function SmoothScroll() {
     gsap.ticker.add(raf);
     gsap.ticker.lagSmoothing(0);
 
+    const onAnchorClick = (event: MouseEvent) => {
+      const link = (event.target as HTMLElement | null)?.closest<HTMLAnchorElement>('a[href^="#"]');
+      if (!link || link.classList.contains("skip-link")) return;
+
+      const hash = link.getAttribute("href");
+      if (!hash || hash === "#") return;
+
+      const target = document.querySelector<HTMLElement>(hash);
+      if (!target) return;
+
+      event.preventDefault();
+      lenis.scrollTo(target, { duration: 1.1 });
+      window.history.replaceState(null, "", hash);
+    };
+
+    document.addEventListener("click", onAnchorClick);
+
     return () => {
+      document.removeEventListener("click", onAnchorClick);
       gsap.ticker.remove(raf);
       registerLenis(null);
       lenis.destroy();

@@ -38,13 +38,14 @@ export const metadata: Metadata = {
   description:
     "Portfolio of Alex Rivera, a frontend engineer and creative developer building fast, tactile interfaces for the web.",
   metadataBase: new URL("https://alexrivera.dev"),
+  alternates: { canonical: "/" },
   openGraph: {
     title: "Alex Rivera — Frontend Engineer & Creative Developer",
     description: "Interfaces that feel alive.",
     type: "website",
     url: "/",
   },
-  twitter: { card: "summary_large_image" },
+  twitter: { card: "summary_large_image", images: ["/opengraph-image"] },
   icons: { icon: "/icon.svg" },
 };
 

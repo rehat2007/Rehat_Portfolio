@@ -33,7 +33,13 @@ export function CommandPalette() {
 
       if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k") {
         event.preventDefault();
-        setOpen((value) => !value);
+        const paletteOpen = Boolean(document.querySelector(".palette"));
+        if (paletteOpen) {
+          setOpen(false);
+          return;
+        }
+        if (document.querySelector("dialog[open]")) return;
+        setOpen(true);
         return;
       }
 
@@ -70,7 +76,7 @@ export function CommandPalette() {
 
     const lenis = getLenis();
     if (lenis) {
-      lenis.scrollTo(target as HTMLElement, { offset: -88 });
+      lenis.scrollTo(target as HTMLElement);
     } else {
       target.scrollIntoView({
         behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",

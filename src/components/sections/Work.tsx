@@ -151,7 +151,10 @@ export function Work() {
                 className={`filter${filter === item.value ? " is-active" : ""}`}
                 type="button"
                 aria-pressed={filter === item.value}
-                onClick={() => setFilter(item.value)}
+                onClick={() => {
+                  hidePreview();
+                  setFilter(item.value);
+                }}
               >
                 {item.label}
               </button>
@@ -177,7 +180,10 @@ export function Work() {
               data-index={index}
               data-category={project.category}
               aria-label={`Open case study: ${project.title}`}
-              onClick={() => setOpenIndex(index)}
+              onClick={() => {
+                hidePreview();
+                setOpenIndex(index);
+              }}
             >
               <span className="project-index">{project.index}</span>
               <span className="project-main">

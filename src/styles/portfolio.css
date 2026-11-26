@@ -113,6 +113,8 @@ time { font-variant-numeric: tabular-nums; }
   border-radius: 4px;
 }
 
+main:focus { outline: none; }
+
 ::-webkit-scrollbar { width: 10px; height: 10px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: var(--surface-2); border-radius: 99px; border: 2px solid var(--bg); }
@@ -1781,6 +1783,7 @@ h2 em {
 .dialog {
   padding: 0;
   border: 0;
+  margin: auto;
   background: transparent;
   color: var(--text);
   width: 100%;
@@ -2124,7 +2127,6 @@ h2 em {
 /* ---------- Reveal ----------
    GSAP owns the initial/final states so content stays visible without JS.
    The class is only a selector hook for the motion layer. */
-.reveal { will-change: opacity, transform; }
 
 /* ---------- Keyframes ---------- */
 @keyframes drift-a {
