@@ -2,6 +2,14 @@ import type { Metadata, Viewport } from "next";
 import { Inter_Tight, Instrument_Serif, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
+import { ToastProvider } from "@/components/providers/ToastProvider";
+import { Grain } from "@/components/layout/Grain";
+import { ScrollProgress } from "@/components/layout/ScrollProgress";
+import { SiteHeader } from "@/components/layout/SiteHeader";
+import { Footer } from "@/components/layout/Footer";
+import { SmoothScroll } from "@/components/layout/SmoothScroll";
+import { ScrollReveals } from "@/components/motion/ScrollReveals";
+import { CommandPalette } from "@/components/ui/CommandPalette";
 
 const sans = Inter_Tight({
   subsets: ["latin"],
@@ -57,10 +65,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     >
       <body>
         <ThemeProvider>
-          <a className="skip-link" href="#main">
-            Skip to content
-          </a>
-          {children}
+          <ToastProvider>
+            <a className="skip-link" href="#main">
+              Skip to content
+            </a>
+            <Grain />
+            <ScrollProgress />
+            <SiteHeader />
+            {children}
+            <Footer />
+            <CommandPalette />
+            <SmoothScroll />
+            <ScrollReveals />
+          </ToastProvider>
         </ThemeProvider>
       </body>
     </html>
