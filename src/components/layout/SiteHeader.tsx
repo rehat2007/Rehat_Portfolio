@@ -49,12 +49,14 @@ export function SiteHeader() {
   }, []);
 
   useEffect(() => {
+    let focusTimer: number | undefined;
+
     if (open) {
       document.body.classList.add("menu-open");
       wasOpen.current = true;
-      window.requestAnimationFrame(() => {
+      focusTimer = window.setTimeout(() => {
         menuRef.current?.querySelector<HTMLElement>("a")?.focus();
-      });
+      }, 100);
     } else {
       document.body.classList.remove("menu-open");
       if (wasOpen.current) {
@@ -63,7 +65,10 @@ export function SiteHeader() {
       }
     }
 
-    return () => document.body.classList.remove("menu-open");
+    return () => {
+      if (focusTimer) window.clearTimeout(focusTimer);
+      document.body.classList.remove("menu-open");
+    };
   }, [open]);
 
   useEffect(() => {
