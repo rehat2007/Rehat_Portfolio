@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { site } from "@/content/site";
 import { useActiveSection } from "@/hooks/useActiveSection";
 import { Icon } from "@/components/ui/Icons";
@@ -17,10 +17,15 @@ const NAV = [
 
 const NAV_IDS = NAV.map((item) => item.id);
 
+const subscribeNoop = () => () => {};
+const getIsMac = () => /Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent);
+const getIsMacServer = () => false;
+
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const [shortcut, setShortcut] = useState("Ctrl K");
+  const isMac = useSyncExternalStore(subscribeNoop, getIsMac, getIsMacServer);
+  const shortcut = isMac ? "⌘ K" : "Ctrl K";
   const active = useActiveSection(NAV_IDS);
   const menuRef = useRef<HTMLDivElement>(null);
   const toggleRef = useRef<HTMLButtonElement>(null);
@@ -41,10 +46,6 @@ export function SiteHeader() {
     onScroll();
     window.addEventListener("scroll", onScrollRequest, { passive: true });
     return () => window.removeEventListener("scroll", onScrollRequest);
-  }, []);
-
-  useEffect(() => {
-    setShortcut(/Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent) ? "⌘ K" : "Ctrl K");
   }, []);
 
   useEffect(() => {

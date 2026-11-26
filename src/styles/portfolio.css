@@ -912,6 +912,7 @@ h1 em {
   font-variant-numeric: tabular-nums;
 }
 .stat-num::after { content: attr(data-suffix); color: var(--accent-text); }
+.stat-suffix { color: var(--accent-text); }
 .stat-label {
   font-family: var(--font-mono);
   font-size: 0.62rem;
