@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 export function useLocalTime(timeZone: string) {
-  const [state, setState] = useState({ time: "--:--", zone: "WET", iso: "" });
+  const [state, setState] = useState({ time: "--:--", zone: "", iso: "" });
 
   useEffect(() => {
     let timeFmt: Intl.DateTimeFormat;
@@ -33,7 +33,7 @@ export function useLocalTime(timeZone: string) {
 
       setState({
         time: timeFmt.format(now),
-        zone: zonePart ?? "WET",
+        zone: zonePart ?? "",
         iso: now.toISOString(),
       });
     };

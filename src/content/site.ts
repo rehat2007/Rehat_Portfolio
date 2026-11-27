@@ -75,31 +75,39 @@ export interface Site {
   experiments: Experiment[];
 }
 
+export const siteUrl = "https://additisla.dev";
+
 export const site = {
   profile: {
-    name: "Alex Rivera",
-    initials: "AR",
-    role: "Frontend engineer & creative developer",
-    email: "hello@alexrivera.dev",
-    location: "Lisbon, Portugal",
-    timezone: "Europe/Lisbon",
-    handle: "@alexrivera",
+    name: "Rehat Islam Addit",
+    initials: "A",
+    role: "Full-stack Developer",
+    email: "additisla@gmail.com",
+    location: "Narshingdi, Bangladesh",
+    timezone: "Asia/Dhaka",
+    handle: "@additisla",
   },
 
   socials: [
-    { label: "GitHub", handle: "@alexrivera", url: "https://github.com", icon: "github" },
-    { label: "X / Twitter", handle: "@alexrivera", url: "https://x.com", icon: "x" },
-    { label: "LinkedIn", handle: "in/alexrivera", url: "https://www.linkedin.com", icon: "linkedin" },
-    { label: "Email", handle: "hello@alexrivera.dev", url: "mailto:hello@alexrivera.dev", icon: "mail" },
+    { label: "GitHub", handle: "@additisla", url: "https://github.com/additisla", icon: "github" },
+    { label: "X / Twitter", handle: "@additisla", url: "https://x.com/additisla", icon: "x" },
+    {
+      label: "LinkedIn",
+      handle: "in/additisla",
+      url: "https://www.linkedin.com/in/additisla",
+      icon: "linkedin",
+    },
+    { label: "Email", handle: "additisla@gmail.com", url: "mailto:additisla@gmail.com", icon: "mail" },
   ],
 
   stats: [
-    { value: 8, suffix: "+", label: "Years shipping" },
-    { value: 34, suffix: "", label: "Products launched" },
-    { value: 6, suffix: "", label: "OSS libraries" },
-    { value: 12, suffix: "", label: "Awards & features" },
+    { value: 6, suffix: "", label: "Projects" },
+    { value: 4, suffix: "", label: "Notes" },
+    { value: 4, suffix: "", label: "Experiments" },
+    { value: 2, suffix: "", label: "Palettes" },
   ],
 
+  // Sample project, note, and experiment content — replace with your own before publishing.
   projects: [
     {
       slug: "orbital",
@@ -213,55 +221,17 @@ export const site = {
 
   experience: [
     {
-      period: "2023 — Now",
-      role: "Senior Frontend Engineer",
-      company: "Novum Labs",
-      location: "Remote · Lisbon",
-      summary: "Leading interface craft for a spatial analytics platform.",
-      points: [
-        "Own the frontend architecture for a WebGL-heavy product used by 40+ enterprise teams.",
-        "Built and maintain the design system, now shared across four product surfaces.",
-        "Mentor three engineers and run the weekly interface critique.",
-      ],
-      stack: ["React", "TypeScript", "Three.js", "Design systems"],
-    },
-    {
-      period: "2020 — 2023",
-      role: "Frontend Engineer",
-      company: "Frame",
-      location: "Berlin, DE",
-      summary: "Built the editor and motion system for a collaborative design tool.",
-      points: [
-        "Shipped the canvas editor: selection, snapping, and a keyboard-first command layer.",
-        "Created the motion language and spring-based transition library used product-wide.",
-        "Partnered with design to cut interaction latency from 90ms to 16ms.",
-      ],
-      stack: ["React", "Canvas", "WebSockets", "Framer Motion"],
-    },
-    {
-      period: "2018 — 2020",
-      role: "Product Engineer",
-      company: "Studio North",
-      location: "Porto, PT",
-      summary: "Agency work for cultural institutions and early-stage startups.",
-      points: [
-        "Delivered 14 client sites, from museum archives to fintech onboarding flows.",
-        "Introduced accessibility and performance budgets as standard practice.",
-        "Prototyped the studio's first WebGL installations and interactive exhibits.",
-      ],
-      stack: ["Vue", "Nuxt", "GSAP", "Postgres"],
-    },
-    {
-      period: "2017 — 2018",
-      role: "Freelance Developer",
+      period: "Now",
+      role: "Full-stack Developer",
       company: "Independent",
-      location: "Everywhere",
-      summary: "Small sites, big lessons, a lot of invoices.",
+      location: "Narshingdi, Bangladesh",
+      summary: "Building complete web products, from the interface to the data layer.",
       points: [
-        "Built marketing sites and small apps for local businesses and creators.",
-        "Learned to scope, price, and say no — the most useful skills I have.",
+        "Build responsive, accessible interfaces with React and Next.js.",
+        "Design APIs and data models that keep products simple to maintain.",
+        "Ship end-to-end features with a focus on performance and clarity.",
       ],
-      stack: ["JavaScript", "CSS", "PHP"],
+      stack: ["TypeScript", "React", "Next.js", "Node.js"],
     },
   ],
 
@@ -330,28 +300,28 @@ export const site = {
       blurb: "A particle field that leans toward your pointer. Canvas 2D, 4kb, no dependencies.",
       tags: ["Canvas", "Physics"],
       art: "dots",
-      url: "https://github.com",
+      url: "https://github.com/additisla",
     },
     {
       title: "Typewave",
       blurb: "A variable-font playground for stretching letterforms into waves.",
       tags: ["Type", "CSS"],
       art: "type",
-      url: "https://github.com",
+      url: "https://github.com/additisla",
     },
     {
       title: "Grain Machine",
       blurb: "Animated film grain, generated live in a fragment shader. Soothing, useless.",
       tags: ["Shader", "WebGL"],
       art: "grain",
-      url: "https://github.com",
+      url: "https://github.com/additisla",
     },
     {
       title: "Squish",
       blurb: "Springy buttons that overshoot, wobble, and settle. A study in feel.",
       tags: ["Motion", "Springs"],
       art: "squish",
-      url: "https://github.com",
+      url: "https://github.com/additisla",
     },
   ],
 } satisfies Site;

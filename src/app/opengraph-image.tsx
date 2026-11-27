@@ -1,6 +1,7 @@
 import { ImageResponse } from "next/og";
+import { site, siteUrl } from "@/content/site";
 
-export const alt = "Alex Rivera — Frontend Engineer & Creative Developer";
+export const alt = `${site.profile.name} — ${site.profile.role}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -39,9 +40,9 @@ export default function OpengraphImage() {
               fontStyle: "italic",
             }}
           >
-            a
+            {site.profile.initials}
           </div>
-          <div style={{ fontSize: 34 }}>alex rivera.</div>
+          <div style={{ fontSize: 34 }}>{site.profile.name.toLowerCase() + "."}</div>
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
@@ -57,7 +58,7 @@ export default function OpengraphImage() {
             }}
           >
             <div style={{ width: 10, height: 10, borderRadius: 99, background: "#c9f75a" }} />
-            Available for select projects / Lisbon, PT
+            Available for select projects / {site.profile.location}
           </div>
           <div
             style={{
@@ -87,8 +88,8 @@ export default function OpengraphImage() {
             fontSize: 20,
           }}
         >
-          <span>Frontend engineer &amp; creative developer</span>
-          <span>alexrivera.dev</span>
+          <span>{site.profile.role}</span>
+          <span>{siteUrl.replace(/^https?:\/\//, "")}</span>
         </div>
       </div>
     ),

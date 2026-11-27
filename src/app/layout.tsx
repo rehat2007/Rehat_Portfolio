@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter_Tight, Instrument_Serif, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import { site, siteUrl } from "@/content/site";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { ToastProvider } from "@/components/providers/ToastProvider";
 import { Grain } from "@/components/layout/Grain";
@@ -33,15 +34,17 @@ const mono = JetBrains_Mono({
   display: "swap",
 });
 
+const title = `${site.profile.name} — ${site.profile.role}`;
+const description = `Portfolio of ${site.profile.name}, a full-stack developer building fast, reliable web products from database to interface.`;
+
 export const metadata: Metadata = {
-  title: "Alex Rivera — Frontend Engineer & Creative Developer",
-  description:
-    "Portfolio of Alex Rivera, a frontend engineer and creative developer building fast, tactile interfaces for the web.",
-  metadataBase: new URL("https://alexrivera.dev"),
+  title,
+  description,
+  metadataBase: new URL(siteUrl),
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Alex Rivera — Frontend Engineer & Creative Developer",
-    description: "Interfaces that feel alive.",
+    title,
+    description: "Building for the web, end to end.",
     type: "website",
     url: "/",
   },

@@ -17,12 +17,12 @@ export function Clock({ id, className, showZone = false }: ClockProps) {
       <time id={id} className={className ?? "js-clock"} dateTime={iso || undefined}>
         {time}
       </time>
-      {showZone && (
+      {showZone && zone ? (
         <>
           {" "}
           <span className="js-tz">{zone}</span>
         </>
-      )}
+      ) : null}
     </>
   );
 }

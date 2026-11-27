@@ -105,7 +105,7 @@ export function Hero() {
             <span className="kicker-sep" aria-hidden="true">
               /
             </span>
-            <span>Lisbon, PT</span>
+            <span>{site.profile.location}</span>
           </p>
 
           <h1>
@@ -120,9 +120,8 @@ export function Hero() {
           </h1>
 
           <p className="hero-sub">
-            I&rsquo;m <strong>{site.profile.name}</strong>, a frontend engineer and creative developer
-            turning ambitious product ideas into fast, tactile experiences. Currently building at Novum
-            Labs.
+            I&rsquo;m <strong>{site.profile.name}</strong>, a full-stack developer building fast,
+            reliable products from database to interface. Currently open to select projects.
           </p>
 
           <div className="hero-actions">
@@ -161,23 +160,23 @@ export function Hero() {
 
               <div className="profile-now">
                 <span className="mono-label">Now</span>
-                <p>Prototyping a WebGPU shader playground</p>
+                <p>Building full-stack products for the web</p>
               </div>
 
               <ul className="profile-rows">
                 <li>
                   <span>Based in</span>
                   <span>
-                    Lisbon, PT &mdash; <Clock id="local-time" />
+                    {site.profile.location} &mdash; <Clock id="local-time" />
                   </span>
                 </li>
                 <li>
                   <span>Role</span>
-                  <span>Senior FE @ Novum Labs</span>
+                  <span>{site.profile.role}</span>
                 </li>
                 <li>
                   <span>Focus</span>
-                  <span>Design systems &middot; WebGL &middot; Motion</span>
+                  <span>Web apps &middot; APIs &middot; Interfaces</span>
                 </li>
               </ul>
 
@@ -189,14 +188,14 @@ export function Hero() {
                   <span />
                 </div>
                 <p>
-                  <span>Listening to</span> Roygbiv &mdash; Boards of Canada
+                  <span>Currently exploring</span> Full-stack product engineering
                 </p>
               </div>
 
               <div className="profile-tags" aria-hidden="true">
                 <span>TypeScript</span>
                 <span>React</span>
-                <span>WebGL</span>
+                <span>Node.js</span>
               </div>
             </div>
           </div>
@@ -209,7 +208,7 @@ export function Hero() {
           Scroll to explore
         </a>
         <span className="hero-foot-note">
-          Currently obsessed with CSS <span className="hl">view transitions</span>
+          Currently focused on building for the web, <span className="hl">end to end</span>
         </span>
       </div>
     </section>

@@ -1,4 +1,4 @@
-import { site } from "@/content/site";
+import { site, siteUrl } from "@/content/site";
 import { Hero } from "@/components/sections/Hero";
 import { Marquee } from "@/components/sections/Marquee";
 import { Stats } from "@/components/sections/Stats";
@@ -12,23 +12,23 @@ const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: site.profile.name,
-  url: "https://alexrivera.dev",
+  url: siteUrl,
   jobTitle: site.profile.role,
   email: site.profile.email,
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Lisbon",
-    addressCountry: "PT",
+    addressLocality: "Narshingdi",
+    addressCountry: "BD",
   },
   sameAs: site.socials.filter((social) => social.url.startsWith("http")).map((social) => social.url),
   knowsAbout: [
     "TypeScript",
     "React",
     "Next.js",
-    "WebGL",
-    "GSAP",
-    "Design systems",
-    "Frontend engineering",
+    "Node.js",
+    "PostgreSQL",
+    "REST APIs",
+    "Full-stack development",
   ],
 };
 

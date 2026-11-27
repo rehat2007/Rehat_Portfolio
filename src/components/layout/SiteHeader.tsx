@@ -92,10 +92,11 @@ export function SiteHeader() {
       <div className="container header-inner">
         <a className="logo" href="#top">
           <span className="logo-mark" aria-hidden="true">
-            a
+            {site.profile.initials}
           </span>
           <span className="logo-text" aria-hidden="true">
-            alex rivera<span className="logo-dot">.</span>
+            {site.profile.name.toLowerCase()}
+            <span className="logo-dot">.</span>
           </span>
           <span className="sr-only">{site.profile.name} — home</span>
         </a>

@@ -29,8 +29,8 @@ export function Contact() {
               Let&rsquo;s make it <em>real</em>.
             </h2>
             <p className="contact-sub reveal">
-              I&rsquo;m open to freelance projects, product collaborations, and the occasional coffee chat.
-              The fastest way to reach me is email &mdash; I reply to everything.
+              I&rsquo;m open to full-stack projects, product collaborations, and good conversations. The
+              fastest way to reach me is email &mdash; I reply to everything.
             </p>
             <div className="contact-email reveal">
               <a className="email-link" href={`mailto:${site.profile.email}`}>
@@ -48,7 +48,7 @@ export function Contact() {
             </div>
             <p className="contact-note reveal">
               <span className="status-dot" aria-hidden="true" />
-              Currently booking projects for Q1 2027
+              Open to select projects
             </p>
           </div>
 
@@ -63,7 +63,7 @@ export function Contact() {
                 <Clock showZone />
               </p>
               <p className="contact-card-note">
-                Based in Lisbon, working with teams across time zones.
+                Based in {site.profile.location}, working with teams across time zones.
               </p>
             </div>
           </div>

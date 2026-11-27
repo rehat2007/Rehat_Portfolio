@@ -18,6 +18,9 @@ const FILTERS: Array<{ value: Filter; label: string }> = [
   { value: "Open source", label: "Open source" },
 ];
 
+const GITHUB_URL =
+  site.socials.find((social) => social.label === "GitHub")?.url ?? "https://github.com";
+
 export function Work() {
   const [filter, setFilter] = useState<Filter>("all");
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -210,7 +213,7 @@ export function Work() {
         <div className="work-foot reveal">
           <p className="mono">
             More experiments live on{" "}
-            <a className="text-link" href="https://github.com" target="_blank" rel="noopener noreferrer">
+            <a className="text-link" href={GITHUB_URL} target="_blank" rel="noopener noreferrer">
               GitHub
             </a>
             .

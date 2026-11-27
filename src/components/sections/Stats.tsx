@@ -3,7 +3,7 @@ import { Counter } from "@/components/ui/Counter";
 
 export function Stats() {
   return (
-    <section className="stats-strip" aria-label="Career highlights">
+    <section className="stats-strip" aria-label="Portfolio at a glance">
       <div className="container stats-grid">
         {site.stats.map((stat) => (
           <div className="stat" key={stat.label}>

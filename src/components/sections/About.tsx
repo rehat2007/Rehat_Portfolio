@@ -1,4 +1,5 @@
 import type { CSSProperties } from "react";
+import { site } from "@/content/site";
 import { Clock } from "@/components/ui/Clock";
 import { Experience } from "@/components/sections/Experience";
 
@@ -23,19 +24,19 @@ export function About() {
           <div className="about-copy">
             <p className="reveal">
               I care about the last 10%: the easing curve, the empty state, the way a button responds when
-              you press it. For the past eight years I&rsquo;ve helped teams ship design systems, editors
-              and WebGL-heavy interfaces.
+              you press it. As a full-stack developer, I build products that feel considered from the
+              interface down to the data model.
             </p>
             <p className="reveal" style={{ "--d": 1 } as CSSProperties}>
-              Most of my work lives where engineering and design overlap. I write the CSS, wire the state,
-              prototype the weird idea &mdash; then make sure it still feels good on a five-year-old laptop.
+              Most of my work lives where engineering and product overlap. I write the code, wire the
+              state, shape the API, and make sure the result still feels good on a slow connection.
             </p>
             <p className="reveal" style={{ "--d": 2 } as CSSProperties}>
-              Outside of work you&rsquo;ll find me collecting field recordings, rebuilding my keyboard
-              firmware, and losing at online chess.
+              Outside of work you&rsquo;ll usually find me learning something new, refining my setup, and
+              exploring the web platform.
             </p>
             <p className="signature reveal" style={{ "--d": 3 } as CSSProperties}>
-              &mdash; Alex
+              &mdash; Rehat
             </p>
 
             <div className="toolkit reveal" style={{ "--d": 4 } as CSSProperties}>
@@ -45,14 +46,14 @@ export function About() {
                   "TypeScript",
                   "React",
                   "Next.js",
-                  "Three.js",
-                  "WebGL / GLSL",
-                  "Framer Motion",
                   "Node.js",
-                  "Rust",
+                  "PostgreSQL",
+                  "Tailwind CSS",
+                  "REST APIs",
+                  "Git",
+                  "Docker",
                   "Figma",
-                  "Tailwind",
-                  "Postgres",
+                  "Prisma",
                   "Vitest",
                 ].map((tool) => (
                   <span key={tool}>{tool}</span>
@@ -72,36 +73,24 @@ export function About() {
               <li>
                 <span>Location</span>
                 <span>
-                  Lisbon, PT &middot; <Clock />
+                  {site.profile.location} &middot; <Clock />
                 </span>
               </li>
               <li>
                 <span>Role</span>
-                <span>Senior Frontend Engineer at Novum Labs</span>
+                <span>{site.profile.role}</span>
               </li>
               <li>
                 <span>Building</span>
-                <span>A WebGPU shader playground</span>
+                <span>Products for the web, end to end</span>
               </li>
               <li>
-                <span>Reading</span>
-                <span>&ldquo;The Creative Act&rdquo; &mdash; Rick Rubin</span>
-              </li>
-              <li>
-                <span>Listening</span>
-                <span className="now-listen">
-                  <span className="eq" aria-hidden="true">
-                    <span />
-                    <span />
-                    <span />
-                    <span />
-                  </span>
-                  Roygbiv &mdash; Boards of Canada
-                </span>
+                <span>Focus</span>
+                <span>Web apps &middot; APIs &middot; Interfaces</span>
               </li>
               <li>
                 <span>Availability</span>
-                <span>Open for select projects &middot; 2027</span>
+                <span>Open to select projects</span>
               </li>
             </ul>
             <div className="now-card-foot">
@@ -116,7 +105,7 @@ export function About() {
         <div className="experience">
           <div className="experience-head reveal">
             <h3>Where I&rsquo;ve been</h3>
-            <span className="mono">2017 &mdash; Present</span>
+            <span className="mono">Now</span>
           </div>
           <Experience />
         </div>
