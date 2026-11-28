@@ -69,12 +69,11 @@ export const site = {
   },
 
   socials: [
-    { label: "GitHub", handle: "@additisla", url: "https://github.com/additisla", icon: "github" },
-    { label: "X / Twitter", handle: "@additisla", url: "https://x.com/additisla", icon: "x" },
+    { label: "GitHub", handle: "@rehat2007", url: "https://github.com/rehat2007", icon: "github" },
     {
       label: "LinkedIn",
-      handle: "in/additisla",
-      url: "https://www.linkedin.com/in/additisla",
+      handle: "in/rehat-webdev",
+      url: "https://www.linkedin.com/in/rehat-webdev/",
       icon: "linkedin",
     },
     { label: "Email", handle: "additisla@gmail.com", url: "mailto:additisla@gmail.com", icon: "mail" },
