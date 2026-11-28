@@ -25,7 +25,7 @@ const personSchema = {
     "React",
     "Next.js",
     "Node.js",
-    "PostgreSQL",
+    "MongoDB",
     "REST APIs",
     "Full-stack development",
   ],

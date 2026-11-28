@@ -46,7 +46,7 @@ export function About() {
                   "React",
                   "Next.js",
                   "Node.js",
-                  "PostgreSQL",
+                  "MongoDB",
                   "Tailwind CSS",
                   "REST APIs",
                   "Git",

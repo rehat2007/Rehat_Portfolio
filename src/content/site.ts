@@ -117,7 +117,7 @@ export const site = {
       longDescription:
         "A finance workspace for independent studios. The brief was simple: make invoicing feel as quick as typing a sentence. I rebuilt the editing surface from scratch around keyboard-first flows and an optimistic sync engine.",
       role: "Lead frontend",
-      stack: ["React", "Node.js", "Postgres", "tRPC"],
+      stack: ["React", "Node.js", "MongoDB", "tRPC"],
       highlights: [
         "Cut time-to-first-invoice from 4 minutes to 38 seconds in usability tests.",
         "Designed an offline-first sync layer with conflict resolution and undo across sessions.",
@@ -215,17 +215,17 @@ export const site = {
       ],
     },
     {
-      slug: "postgres-checklist-before-launch",
-      title: "A PostgreSQL checklist before launch",
+      slug: "mongodb-checklist-before-launch",
+      title: "A MongoDB checklist before launch",
       category: "Database",
       date: "Sep 2026",
       read: "9 min",
       excerpt:
-        "Indexes, constraints, migrations, backups, and connection limits. The boring database checks that prevent very exciting incidents.",
+        "Indexes, schema validation, migrations, backups, and connection limits. The boring database checks that prevent very exciting incidents.",
       body: [
-        "A database that works on a laptop and a database that works in production are different products. Before launch I check the queries the app actually runs, not just the schema. Every foreign key gets an index, every list view has a plan, and every migration has been run against realistic data.",
-        "Constraints are documentation the database enforces. I use NOT NULL, unique indexes, and foreign keys before I trust application validation. Application code can have a bug; a constraint is a second set of eyes. For soft deletes, that has to be designed into the unique indexes, not patched later.",
-        "Then come the operational basics: connection pooling that matches the host's limit, a restore test instead of a backup checkbox, slow-query logging, and migrations that can run while the old version is still serving traffic. None of this is glamorous. All of it is cheaper than an incident.",
+        "A database that works on a laptop and a database that works in production are different products. Before launch I check the queries the app actually runs, not just the collections. Every hot query gets a supporting index, every list view has an explain plan, and every backfill has been run against realistic data.",
+        "MongoDB is flexible, but that does not mean schemaless in production. I add JSON schema validation for the fields the product depends on, unique indexes for identity, and explicit defaults in the application layer. Application code can have a bug; a validator is a second set of eyes. Soft deletes need to be part of the index design, not patched later.",
+        "Then come the operational basics: connection pool sizing that matches the cluster and serverless concurrency, a restore test instead of a backup checkbox, slow-query profiling through the database profiler, and index builds that do not block traffic. None of this is glamorous. All of it is cheaper than an incident.",
       ],
     },
     {

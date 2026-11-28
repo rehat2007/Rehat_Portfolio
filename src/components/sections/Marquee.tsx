@@ -9,7 +9,7 @@ const TECHNOLOGIES = [
   "Rust",
   "Figma",
   "GLSL",
-  "Postgres",
+  "MongoDB",
   "Framer Motion",
 ];
 
