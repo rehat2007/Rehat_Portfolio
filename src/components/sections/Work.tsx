@@ -13,9 +13,10 @@ type Filter = "all" | ProjectCategory;
 
 const FILTERS: Array<{ value: Filter; label: string }> = [
   { value: "all", label: "All" },
-  { value: "Web app", label: "Web apps" },
-  { value: "3D & motion", label: "3D & motion" },
-  { value: "Open source", label: "Open source" },
+  { value: "Full-stack", label: "Full-stack" },
+  { value: "Marketplace", label: "Marketplace" },
+  { value: "Data", label: "Data" },
+  { value: "E-commerce", label: "E-commerce" },
 ];
 
 const GITHUB_URL =
@@ -141,8 +142,8 @@ export function Work() {
             </h2>
           </div>
           <p className="section-lead reveal">
-            A few products, experiments and open-source detours from the last few years. Click any row for
-            the story behind it.
+            A few full-stack products and front-end builds from the last year. Click any row for the
+            story behind it.
           </p>
         </header>
 
@@ -212,7 +213,7 @@ export function Work() {
 
         <div className="work-foot reveal">
           <p className="mono">
-            More experiments live on{" "}
+            More work lives on{" "}
             <a className="text-link" href={GITHUB_URL} target="_blank" rel="noopener noreferrer">
               GitHub
             </a>

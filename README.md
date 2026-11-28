@@ -54,4 +54,4 @@ src/
 
 Profile data (name, role, email, location, timezone, and social links) lives in `src/content/site.ts`. `siteUrl` in the same file controls the canonical domain used by metadata, JSON-LD, robots, and the sitemap, so set it to the deployed domain before publishing.
 
-The projects and notes are sample content in `site.ts` - replace them with your own work. Social profile URLs currently follow the `@additisla` handle; verify them before launch.
+The projects and notes live in `site.ts`. Social profiles are GitHub `@rehat2007`, LinkedIn `in/rehat-webdev`, and email `additisla@gmail.com`.

@@ -1645,6 +1645,42 @@ h2 em {
   color: var(--text-soft);
   max-width: 62ch;
 }
+
+.dialog-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+.dialog-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  color: var(--text-soft);
+  font-size: 0.78rem;
+  transition: color 0.25s, border-color 0.25s, background-color 0.25s, transform 0.3s var(--ease);
+}
+.dialog-link svg { width: 13px; height: 13px; }
+.dialog-link:hover {
+  color: var(--text);
+  border-color: var(--line-strong);
+  background: var(--surface);
+  transform: translateY(-1px);
+}
+.dialog-link--primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-ink);
+}
+.dialog-link--primary:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-ink);
+}
+
 .dialog-meta {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));

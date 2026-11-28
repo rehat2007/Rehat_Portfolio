@@ -138,6 +138,30 @@ export function ProjectDialog({ index, onClose, onNavigate }: ProjectDialogProps
           <div className="dialog-body">
             <p className="dialog-lede">{project.longDescription}</p>
 
+            <div className="dialog-links">
+              <a
+                className="dialog-link dialog-link--primary"
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span>Live site</span>
+                <Icon name="arrowUpRight" />
+              </a>
+              {project.repos.map((repo) => (
+                <a
+                  className="dialog-link"
+                  key={repo.url}
+                  href={repo.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span>{repo.label}</span>
+                  <Icon name="arrowUpRight" />
+                </a>
+              ))}
+            </div>
+
             <div className="dialog-meta">
               <div>
                 <span>Role</span>

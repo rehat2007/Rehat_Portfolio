@@ -1,4 +1,4 @@
-export type ProjectCategory = "Web app" | "3D & motion" | "Open source";
+export type ProjectCategory = "Full-stack" | "Marketplace" | "Data" | "E-commerce";
 
 export type SocialIcon = "github" | "x" | "linkedin" | "mail";
 
@@ -7,6 +7,11 @@ export interface Social {
   handle: string;
   url: string;
   icon: SocialIcon;
+}
+
+export interface ProjectLink {
+  label: string;
+  url: string;
 }
 
 export interface Project {
@@ -21,6 +26,8 @@ export interface Project {
   stack: string[];
   highlights: string[];
   colors: [string, string];
+  liveUrl: string;
+  repos: ProjectLink[];
 }
 
 export interface Note {
@@ -80,7 +87,7 @@ export const site = {
   ],
 
   stats: [
-    { value: 6, suffix: "", label: "Projects" },
+    { value: 4, suffix: "", label: "Projects" },
     { value: 4, suffix: "", label: "Notes" },
     { value: 4, suffix: "", label: "Experiments" },
     { value: 2, suffix: "", label: "Palettes" },
@@ -89,112 +96,90 @@ export const site = {
   // Sample project and note content - replace with your own before publishing.
   projects: [
     {
-      slug: "orbital",
+      slug: "fixmate",
       index: "01",
-      title: "Orbital",
-      category: "3D & motion",
+      title: "FixMate",
+      category: "Full-stack",
       year: "2026",
-      description: "A real-time 3D analytics canvas for satellite fleets.",
+      description: "A role-based repair marketplace for booking verified technicians and paying after the job is done.",
       longDescription:
-        "Orbital gives mission operators a live, spatial view of their constellations. I designed and built the entire frontend — from the instanced-mesh renderer to the timeline scrubber that lets you rewind eight hours of telemetry without dropping a frame.",
-      role: "Design & engineering",
-      stack: ["Three.js", "WebGL", "TypeScript", "Web Workers"],
+        "FixMate connects customers with verified repair technicians for phones, laptops, ACs, fridges, TVs, and electrical work. Customers browse services, request a repair, track every status change, and pay only after completion. Technicians manage listings and requests, while admins moderate users, bookings, and payments.",
+      role: "Full-stack development",
+      stack: ["Next.js", "TypeScript", "Express", "MongoDB", "Stripe", "Better Auth"],
       highlights: [
-        "Rendered 12,000 orbital objects at 60fps using instanced meshes and a custom LOD system.",
-        "Built a timeline scrubber that streams and interpolates historical telemetry in under 40ms.",
-        "Shipped the design system, docs site and onboarding flow alongside the core product.",
+        "Built separate customer, technician, and admin flows with Better Auth sessions and role-based access.",
+        "Implemented service browsing, booking status tracking, and Stripe Checkout that holds payment until the repair is complete.",
+        "Hardened the Express API with Zod validation, rate limiting, Helmet, and S3-backed uploads.",
       ],
-      colors: ["#d9ff7a", "#7ef0d0"],
+      colors: ["#b6f2d8", "#5eead4"],
+      liveUrl: "https://assignment-09-frontend-two.vercel.app/",
+      repos: [
+        { label: "Frontend repo", url: "https://github.com/rehat2007/Assignment-09-frontend" },
+        { label: "Backend repo", url: "https://github.com/rehat2007/Assignment-09-backend" },
+      ],
     },
     {
-      slug: "ledgerline",
+      slug: "studiospace",
       index: "02",
-      title: "Ledgerline",
-      category: "Web app",
-      year: "2025",
-      description: "Invoicing software that feels like a spreadsheet, minus the dread.",
+      title: "StudioSpace",
+      category: "Marketplace",
+      year: "2026",
+      description: "An hourly studio-rental marketplace for photo, podcast, and creator spaces.",
       longDescription:
-        "A finance workspace for independent studios. The brief was simple: make invoicing feel as quick as typing a sentence. I rebuilt the editing surface from scratch around keyboard-first flows and an optimistic sync engine.",
-      role: "Lead frontend",
-      stack: ["React", "Node.js", "MongoDB", "tRPC"],
+        "StudioSpace connects creative professionals with hourly studio space. Hosts publish photo studios, film stages, podcast lounges, music rooms, and workshop spaces; customers search by category, compare hourly rates, and request bookings against live availability.",
+      role: "Full-stack development",
+      stack: ["Next.js", "React", "Express", "MongoDB", "Better Auth", "Tailwind CSS"],
       highlights: [
-        "Cut time-to-first-invoice from 4 minutes to 38 seconds in usability tests.",
-        "Designed an offline-first sync layer with conflict resolution and undo across sessions.",
-        "Reduced the main bundle by 61% after replacing a charting dependency with hand-rolled SVG.",
+        "Built category search, hourly pricing, and live availability across photo, podcast, music, and workshop studios.",
+        "Implemented email/password and Google OAuth with Better Auth sharing sessions across the Next.js frontend and Express API.",
+        "Added bookings, reviews, wishlists, host dashboards, and newsletter flows on a shared MongoDB data model.",
       ],
-      colors: ["#ffc09b", "#ff8fa8"],
+      colors: ["#ffb199", "#ff8a65"],
+      liveUrl: "https://studiospace-theta.vercel.app/",
+      repos: [
+        { label: "Frontend repo", url: "https://github.com/rehat2007/Assignment-08-frontend" },
+        { label: "Backend repo", url: "https://github.com/rehat2007/Assignment-08-backend" },
+      ],
     },
     {
-      slug: "motif",
+      slug: "bazar-dor",
       index: "03",
-      title: "Motif",
-      category: "Web app",
-      year: "2025",
-      description: "An AI moodboard that reads the room, not just the prompt.",
+      title: "Bazar Dor",
+      category: "Data",
+      year: "2026",
+      description: "A Bangla-first market price tracker for everyday essentials, with daily changes and comparisons.",
       longDescription:
-        "Motif turns a messy folder of references into coherent art direction. I worked with the founding team to shape the product and built the interaction model: spatial boards, inline generation, and a review flow that keeps humans in charge.",
-      role: "Founding engineer",
-      stack: ["Next.js", "AI SDK", "Framer Motion", "Tailwind"],
+        "Bazar Dor helps people follow the latest prices of rice, lentils, oil, vegetables, fish, meat, eggs, and spices. Signed-in users compare prices across markets and track fluctuations, while a live-style ticker and sorting controls make daily price checks fast on any screen.",
+      role: "Full-stack development",
+      stack: ["Next.js", "MongoDB", "Better Auth", "Tailwind CSS", "DaisyUI"],
       highlights: [
-        "Designed and shipped the spatial board canvas with drag, snap and multi-select.",
-        "Built a streaming generation UI with skeleton previews and graceful failure states.",
-        "Took the product from prototype to 9k weekly active designers in seven months.",
+        "Built a Bangla-first responsive storefront with a live-style price ticker and daily price-change indicators.",
+        "Added category filters, sorting, and per-product market comparisons across 33+ everyday essentials.",
+        "Implemented social authentication and MongoDB-backed product data with a DaisyUI component system.",
       ],
-      colors: ["#cdb9ff", "#93a8ff"],
+      colors: ["#b9f6ca", "#ffe082"],
+      liveUrl: "https://assignment-07-beta.vercel.app/",
+      repos: [{ label: "Repository", url: "https://github.com/rehat2007/Assignment-07" }],
     },
     {
-      slug: "signal",
+      slug: "nova",
       index: "04",
-      title: "Signal",
-      category: "Open source",
-      year: "2024",
-      description: "Lightweight observability for teams that hate dashboards.",
+      title: "Nova",
+      category: "E-commerce",
+      year: "2026",
+      description: "A polished front-end fashion store with search, persistent cart, wishlist, and checkout.",
       longDescription:
-        "Signal is an open-source toolkit that turns logs, traces and metrics into one queryable event stream. I maintain the browser client and the embeddable charting library used by roughly 400 teams.",
-      role: "Creator & maintainer",
-      stack: ["Rust", "ClickHouse", "TypeScript"],
+        "Nova is a front-end-only e-commerce demo for a modern fashion brand. It includes a shop with live filtering, search, and six sort options, product pages with size and color selection, a LocalStorage cart and wishlist, and a validated checkout flow.",
+      role: "Front-end development",
+      stack: ["HTML5", "CSS3", "JavaScript", "LocalStorage"],
       highlights: [
-        "Designed an SDK that adds under 3kb to a bundle and batches events on idle.",
-        "Wrote the charting layer: canvas-based, accessible, keyboard-navigable.",
-        "Grew the project to 4.8k GitHub stars with zero marketing budget.",
+        "Built a 16-product catalogue with live search, category filtering, and six sort modes.",
+        "Implemented a LocalStorage cart and wishlist with quantity controls, a free-shipping threshold, and empty states.",
+        "Created a validated checkout flow with order confirmation, toasts, and accessible keyboard-friendly controls.",
       ],
-      colors: ["#a9e9ff", "#82a9ff"],
-    },
-    {
-      slug: "aperture",
-      index: "05",
-      title: "Aperture",
-      category: "3D & motion",
-      year: "2024",
-      description: "A camera app for the browser, built on WebGPU.",
-      longDescription:
-        "A weekend experiment that got out of hand. Aperture applies real-time film emulation in the browser using WebGPU compute shaders, with a tactile control surface inspired by analog cameras.",
-      role: "Everything",
-      stack: ["WebGPU", "WGSL", "WASM"],
-      highlights: [
-        "Implemented a 12-pass film pipeline at 4K and 60fps on integrated graphics.",
-        "Built a graceful WebGL2 fallback so the app works on older devices.",
-        "Featured on Chrome Experiments and Hacker News front page.",
-      ],
-      colors: ["#ffe29a", "#ffb47a"],
-    },
-    {
-      slug: "field-notes",
-      index: "06",
-      title: "Field Notes",
-      category: "Web app",
-      year: "2023",
-      description: "A writing app with a physical soul and local-first bones.",
-      longDescription:
-        "A distraction-free writing tool for people who miss paper. Everything is stored locally, synced peer-to-peer, and exported as clean Markdown. I built the editor, the typography engine and the sync protocol.",
-      role: "Design & engineering",
-      stack: ["Tauri", "SQLite", "CRDT", "Rust"],
-      highlights: [
-        "Wrote a custom CRDT layer that syncs offline edits across devices in under a second.",
-        "Designed a typography system with true optical margins and hanging punctuation.",
-        "Shipped a 6MB desktop app with a cold start under 400ms.",
-      ],
-      colors: ["#d8ffae", "#96efc6"],
+      colors: ["#e8e6dc", "#a8a29e"],
+      liveUrl: "https://novastore-pink.vercel.app/",
+      repos: [{ label: "Repository", url: "https://github.com/rehat2007/nova_store" }],
     },
   ],
 
