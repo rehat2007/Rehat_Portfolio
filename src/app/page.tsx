@@ -5,7 +5,6 @@ import { Stats } from "@/components/sections/Stats";
 import { Work } from "@/components/sections/Work";
 import { About } from "@/components/sections/About";
 import { Writing } from "@/components/sections/Writing";
-import { Playground } from "@/components/sections/Playground";
 import { Contact } from "@/components/sections/Contact";
 
 const personSchema = {
@@ -46,7 +45,6 @@ export default function Home() {
         <Work />
         <About />
         <Writing />
-        <Playground />
         <Contact />
       </main>
     </>

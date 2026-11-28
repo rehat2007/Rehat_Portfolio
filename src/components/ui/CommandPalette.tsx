@@ -15,8 +15,7 @@ const SECTIONS = [
   { label: "Selected work", hint: "01", hash: "#work" },
   { label: "About", hint: "02", hash: "#about" },
   { label: "Notes", hint: "03", hash: "#writing" },
-  { label: "Playground", hint: "04", hash: "#play" },
-  { label: "Contact", hint: "05", hash: "#contact" },
+  { label: "Contact", hint: "04", hash: "#contact" },
 ];
 
 export function CommandPalette() {

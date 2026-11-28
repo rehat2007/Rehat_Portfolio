@@ -54,4 +54,4 @@ src/
 
 Profile data (name, role, email, location, timezone, and social links) lives in `src/content/site.ts`. `siteUrl` in the same file controls the canonical domain used by metadata, JSON-LD, robots, and the sitemap, so set it to the deployed domain before publishing.
 
-The projects, notes, and experiments are sample content in `site.ts` - replace them with your own work. Social profile URLs currently follow the `@additisla` handle; verify them before launch.
+The projects and notes are sample content in `site.ts` - replace them with your own work. Social profile URLs currently follow the `@additisla` handle; verify them before launch.

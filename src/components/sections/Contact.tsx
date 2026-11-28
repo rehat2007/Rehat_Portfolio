@@ -19,7 +19,7 @@ export function Contact() {
     <section className="section contact" id="contact">
       <div className="container">
         <p className="section-label reveal">
-          <span>05</span> Contact
+          <span>04</span> Contact
         </p>
         <div className="contact-grid">
           <div className="contact-copy">

@@ -33,14 +33,6 @@ export interface Note {
   body: string[];
 }
 
-export interface Experiment {
-  title: string;
-  blurb: string;
-  tags: string[];
-  art: "dots" | "type" | "grain" | "squish";
-  url: string;
-}
-
 export interface Stat {
   value: number;
   suffix: string;
@@ -61,7 +53,6 @@ export interface Site {
   stats: Stat[];
   projects: Project[];
   writing: Note[];
-  experiments: Experiment[];
 }
 
 export const siteUrl = "https://additisla.dev";
@@ -96,7 +87,7 @@ export const site = {
     { value: 2, suffix: "", label: "Palettes" },
   ],
 
-  // Sample project, note, and experiment content — replace with your own before publishing.
+  // Sample project and note content - replace with your own before publishing.
   projects: [
     {
       slug: "orbital",
@@ -264,37 +255,6 @@ export const site = {
         "Building in public is not a growth strategy, or at least it shouldn't be. It's a forcing function for clarity. Writing down what you're making exposes the parts you've been avoiding, and publishing it gives other people permission to help.",
         "The cost is real: you get judged on work you know is incomplete, and the internet is not always kind. The trick is to publish the learning, not the performance. Nobody needs another polished launch post. They'd rather see the thing that didn't work.",
       ],
-    },
-  ],
-
-  experiments: [
-    {
-      title: "Cursor Field",
-      blurb: "A particle field that leans toward your pointer. Canvas 2D, 4kb, no dependencies.",
-      tags: ["Canvas", "Physics"],
-      art: "dots",
-      url: "https://github.com/additisla",
-    },
-    {
-      title: "Typewave",
-      blurb: "A variable-font playground for stretching letterforms into waves.",
-      tags: ["Type", "CSS"],
-      art: "type",
-      url: "https://github.com/additisla",
-    },
-    {
-      title: "Grain Machine",
-      blurb: "Animated film grain, generated live in a fragment shader. Soothing, useless.",
-      tags: ["Shader", "WebGL"],
-      art: "grain",
-      url: "https://github.com/additisla",
-    },
-    {
-      title: "Squish",
-      blurb: "Springy buttons that overshoot, wobble, and settle. A study in feel.",
-      tags: ["Motion", "Springs"],
-      art: "squish",
-      url: "https://github.com/additisla",
     },
   ],
 } satisfies Site;
