@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { CSSProperties } from "react";
+import Image from "next/image";
 import { site, type ProjectCategory } from "@/content/site";
 import { gsap, MOTION_OK, ScrollTrigger, useGSAP } from "@/lib/gsap";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
@@ -238,7 +239,14 @@ export function Work() {
         }
       >
         <div className="preview-art">
-          <span className="preview-orb" />
+          <Image
+            src={previewProject.image}
+            alt=""
+            fill
+            sizes="330px"
+            className="preview-image"
+            draggable={false}
+          />
         </div>
         <div className="preview-top">
           <span className="preview-index">{previewProject.index}</span>

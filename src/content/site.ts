@@ -26,6 +26,7 @@ export interface Project {
   stack: string[];
   highlights: string[];
   colors: [string, string];
+  image: string;
   liveUrl: string;
   repos: ProjectLink[];
 }
@@ -112,6 +113,7 @@ export const site = {
         "Hardened the Express API with Zod validation, rate limiting, Helmet, and S3-backed uploads.",
       ],
       colors: ["#b6f2d8", "#5eead4"],
+      image: "/projects/fixmate.png",
       liveUrl: "https://assignment-09-frontend-two.vercel.app/",
       repos: [
         { label: "Frontend repo", url: "https://github.com/rehat2007/Assignment-09-frontend" },
@@ -135,6 +137,7 @@ export const site = {
         "Added bookings, reviews, wishlists, host dashboards, and newsletter flows on a shared MongoDB data model.",
       ],
       colors: ["#ffb199", "#ff8a65"],
+      image: "/projects/studiospace.png",
       liveUrl: "https://studiospace-theta.vercel.app/",
       repos: [
         { label: "Frontend repo", url: "https://github.com/rehat2007/Assignment-08-frontend" },
@@ -158,6 +161,7 @@ export const site = {
         "Implemented social authentication and MongoDB-backed product data with a DaisyUI component system.",
       ],
       colors: ["#b9f6ca", "#ffe082"],
+      image: "/projects/bazar-dor.png",
       liveUrl: "https://assignment-07-beta.vercel.app/",
       repos: [{ label: "Repository", url: "https://github.com/rehat2007/Assignment-07" }],
     },
@@ -178,6 +182,7 @@ export const site = {
         "Created a validated checkout flow with order confirmation, toasts, and accessible keyboard-friendly controls.",
       ],
       colors: ["#e8e6dc", "#a8a29e"],
+      image: "/projects/nova.png",
       liveUrl: "https://novastore-pink.vercel.app/",
       repos: [{ label: "Repository", url: "https://github.com/rehat2007/nova_store" }],
     },
