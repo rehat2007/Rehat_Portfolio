@@ -33,8 +33,8 @@ export function Writing() {
             </h2>
           </div>
           <p className="section-lead reveal">
-            Occasional essays on motion, tooling, and the craft of the web. Short reads, strong opinions,
-            no growth hacks.
+            Practical notes on building full-stack products &mdash; APIs, databases, auth, and the details
+            that keep features shipping.
           </p>
         </header>
 
