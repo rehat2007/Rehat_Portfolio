@@ -13,7 +13,7 @@ import { useToast } from "@/components/providers/ToastProvider";
 const SECTIONS = [
   { label: "Overview", hint: "Top", hash: "#top" },
   { label: "Selected work", hint: "01", hash: "#work" },
-  { label: "About & experience", hint: "02", hash: "#about" },
+  { label: "About", hint: "02", hash: "#about" },
   { label: "Notes", hint: "03", hash: "#writing" },
   { label: "Playground", hint: "04", hash: "#play" },
   { label: "Contact", hint: "05", hash: "#contact" },

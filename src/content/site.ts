@@ -23,16 +23,6 @@ export interface Project {
   colors: [string, string];
 }
 
-export interface Experience {
-  period: string;
-  role: string;
-  company: string;
-  location: string;
-  summary: string;
-  points: string[];
-  stack: string[];
-}
-
 export interface Note {
   slug: string;
   title: string;
@@ -70,7 +60,6 @@ export interface Site {
   socials: Social[];
   stats: Stat[];
   projects: Project[];
-  experience: Experience[];
   writing: Note[];
   experiments: Experiment[];
 }
@@ -216,22 +205,6 @@ export const site = {
         "Shipped a 6MB desktop app with a cold start under 400ms.",
       ],
       colors: ["#d8ffae", "#96efc6"],
-    },
-  ],
-
-  experience: [
-    {
-      period: "Now",
-      role: "Full-stack Developer",
-      company: "Independent",
-      location: "Narshingdi, Bangladesh",
-      summary: "Building complete web products, from the interface to the data layer.",
-      points: [
-        "Build responsive, accessible interfaces with React and Next.js.",
-        "Design APIs and data models that keep products simple to maintain.",
-        "Ship end-to-end features with a focus on performance and clarity.",
-      ],
-      stack: ["TypeScript", "React", "Next.js", "Node.js"],
     },
   ],
 

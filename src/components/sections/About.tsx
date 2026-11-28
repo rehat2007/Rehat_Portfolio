@@ -1,7 +1,6 @@
 import type { CSSProperties } from "react";
 import { site } from "@/content/site";
 import { Clock } from "@/components/ui/Clock";
-import { Experience } from "@/components/sections/Experience";
 
 export function About() {
   return (
@@ -100,14 +99,6 @@ export function About() {
               <span aria-hidden="true">↗</span>
             </div>
           </aside>
-        </div>
-
-        <div className="experience">
-          <div className="experience-head reveal">
-            <h3>Where I&rsquo;ve been</h3>
-            <span className="mono">Now</span>
-          </div>
-          <Experience />
         </div>
       </div>
     </section>
